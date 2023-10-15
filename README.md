@@ -1,7 +1,9 @@
-![image](https://github.com/vipinyadav2k/HireWheels/assets/122339831/b3dce8de-157d-4ba9-aa81-4c1efb68e136)# HireWheels
+-----------------------------------------------------
+           Hire-Wheels
+           Name: Vipin Yadav
+           Roll no: 20CSU230
+---------------------------------------------------- 
 
-Name: Vipin Yadav
-Roll no: 20CSU230
 
 This is Spring-Boot Project, which provides role-based authentication for Hiring Vehicles.
 
