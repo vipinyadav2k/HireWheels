@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle List</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Custom CSS for the sidebar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(255, 255, 255);
+        }
+        
+        .carLogo{
+			border-radius: 50%;
+			border: 3px solid;
+			margin-top: 30px;
+		}
+		/* Center the content vertically and horizontally */
+		.centered-content {
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		    height: 100%; /* Set to 100% to fill the entire content area */
+		}
+
+
+        .sidebar {
+			margin-top: 72px;
+            height: 100%;
+            width: 250px;
+           
+            top: 0;
+            left: -250px;
+            background-color: #333;
+            transition: left 0.3s;
+            padding-top: 10px;
+        }
+		 .nav-item:hover {
+		    background-color:#0f3d48; /* Change to the color you want on hover */
+		}
+
+        .sidebar.show {
+            left: 0;
+        }
+
+        .sidebar ul {
+			list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            padding: 7px 15px;
+            color: white;
+        }
+
+        .content {
+            margin-left: 230px;
+            padding: 0px;
+        }
+
+        
+        a{
+			color: aliceblue;
+			
+		}
+		h3{
+			margin-top: 22px;
+		}
+		ul li a:hover {
+		    color: white;
+		}
+		hr{
+		    margin-top: 1rem;
+		    margin-bottom: 13rem;
+		    border: 0;
+		    border-top: 1px solid rgb(255 255 255 / 78%);
+		}
+		
+		
+		/* Style the last li element (logout link) differently */
+		.sidebar li:last-child {
+		    border-bottom: none; /* Remove the border for the last element */
+		}
+		.table .thead-light th {
+		    color: rgb(255, 255, 255);
+		    background-color: #33404d;
+		    border-color: #2d2d2d;
+		}
+		
+		 .table thead th {
+	        background-color: #343a40; /* Dark color for table header */
+	        color: white;
+	    }
+	
+	    /* Style alternating rows */
+	    .table tbody tr:nth-child(odd) {
+	        background-color: #f2f2f2; /* Light gray for odd rows */
+	    }
+	
+	    .table tbody tr:nth-child(even) {
+	        background-color: #dcdcdc; /* Dark gray for even rows */
+	    }
+    </style>
+</head>
+<body>
+	
+	
+	<div class="sidebar" id="sidebar">
+	    <ul>
+			<li class="nav-item"><a class="nav-link" th:href="@{/admin-page}">Home</a></li>
+	         <li class="nav-item"><a class="nav-link" th:href="@{/vehicle}">View Vehicles</a></li>
+	        <li class="nav-item"><a class="nav-link" th:href="@{/vehicle/new}">Add Vehicles</a></li>
+	        <li class="nav-item"><a class="nav-link" th:href="@{/bookings}">All Bookings</a></li>
+	        
+	        <li ><hr></li>
+	        <li class="nav-item">
+	            <a class="nav-link" th:href="@{/logout}">
+	                <span style="margin-right: 10px;"><i class="fa fa-sign-out" style="font-size:18px"></i></span>
+	                Logout
+	            </a>
+	        </li>
+	    </ul>
+	</div>
+	
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" th:href="@{/admin-page}">
+            <img src="/Logo.png" alt="Hire-Wheels" class="mr-2" width="60" height="40">
+            Hire-Wheels
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li >
+					<a class="nav-link" href="/login">
+					<img src="/user-account.png" alt="avatar" height="40px" width="40px">
+                    <span class="text-white" th:text="${#authentication.principal.username}"></span>
+					</a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+ <div class="content">
+    <div class="container mt-4 ml-3">
+         <!-- Add a "Add Vehicle" button using Bootstrap -->
+        
+        <table class="table table-bordered">
+    <thead class="thead-light">
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Role</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}">ID</td>
+                <td th:text="${user.fullname}">Full Name</td>
+                <td th:text="${user.email}">Email</td>
+                <td th:text="${user.password}">Password</td>
+                <td th:text="${user.role}">Role</td>
+            </tr>
+        </tbody>
+</table>
+    </div>
+ </div>
+
+    <!-- Add Bootstrap JS and jQuery scripts at the end of the body -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

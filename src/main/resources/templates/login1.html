@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+      <link href="styles.css" rel="stylesheet">
+</head>
+<body><br><br><br><br><br><br>
+    <div class="container1">
+		
+        <div class="message" th:if="${param.error}">
+           Invalid Username or Password
+        </div>
+        <div class="message" th:if="${param.logout}">
+           Logout Successfuly
+        </div>
+        
+        <h2>Login Page</h2>
+        <form 
+         th:action="@{/login}"
+         method="post"
+         
+        >
+            
+            
+            <div class="form-group">
+                <label for="username">Email:</label>
+                <input  type="email" id="username" name="username" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input  type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <input type="submit" value="Login">
+            <br>
+            <br>
+            <div class="form-group">
+						<span>New user? <a href="/" th:href="@{/registration}">Register
+								here</a></span>
+				</div>
+        </form>
+        
+    </div>
+</body>
+</html>

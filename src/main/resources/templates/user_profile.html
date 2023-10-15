@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Registration and Login App</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Custom CSS for the sidebar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #8AAAE5;
+        }
+        
+         .container {
+            text-align: left;
+            margin-top: 100px;
+            border: 2px solid #888be5;
+            padding: 20px;
+            background-color: #6dadab;
+            max-width: 400px;
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-left: 30%;
+            margin-bottom: 35px;
+            box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+        }
+        
+        .carLogo{
+			border-radius: 50%;
+			border: 3px solid;
+			margin-top: 30px;
+		}
+		/* Center the content vertically and horizontally */
+		.centered-content {
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		    height: 100%; /* Set to 100% to fill the entire content area */
+		}
+
+
+        .sidebar {
+			margin-top: 72px;
+            height: 100%;
+            width: 250px;
+            
+            top: 0;
+            left: -250px;
+            background-color: #333;
+            transition: left 0.3s;
+            padding-top: 10px;
+        }
+		 .nav-item:hover {
+		    background-color:#0f3d48; /* Change to the color you want on hover */
+		}
+
+        .sidebar.show {
+            left: 0;
+        }
+
+        .sidebar ul {
+			list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            padding: 10px 15px;
+            color: white;
+        }
+
+        .content {
+            margin-left: 230px;
+            padding: 0px;
+        }
+
+        
+        a{
+			color: aliceblue;
+			
+		}
+		h3{
+			margin-top: 22px;
+		}
+		ul li a:hover {
+		    color: white;
+		}
+		hr{
+		    margin-top: 1rem;
+		    margin-bottom: 13rem;
+		    border: 0;
+		    border-top: 1px solid rgb(255 255 255 / 78%);
+		}
+		
+		
+		/* Style the last li element (logout link) differently */
+		.sidebar li:last-child {
+		    border-bottom: none; /* Remove the border for the last element */
+		}
+    </style>
+</head>
+<body>
+
+	
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" th:href="@{/user-page}">
+            <img src="/Logo.png" alt="Hire-Wheels" class="mr-2" width="60" height="40">
+            Hire-Wheels
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li >
+					<a class="nav-link" href="/login">
+					<img src="/user-account.png" alt="avatar" height="40px" width="40px">
+                    <span class="text-white" th:text="${#authentication.principal.username}"></span>
+					</a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <img src="/user-account.png" alt="Avatar" class="avatar">
+        <h5>Name: <span th:if="${user}" th:text="${user.fullname}"></span></h5>
+        <h5>Email: <span th:if="${user}" th:text="${user.email}"></span></h5>
+        <!-- Add more properties as needed -->
+    </div>
+
+    <!-- JavaScript to toggle the sidebar -->
+    <script>
+		
+       function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("show");
+    console.log("Sidebar toggled");
+}
+    </script>
+</body>
+</html>
