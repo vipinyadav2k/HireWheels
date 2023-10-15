@@ -47,4 +47,39 @@ This is Spring-Boot Project, which provides role-based authentication for Hiring
    ![image](https://github.com/vipinyadav2k/HireWheels/assets/122339831/379bc20e-a765-4938-a6a4-bde1a3a4d606)
 
 
+-----------------------------------------------------
+            User Dashboard & Booking
+-----------------------------------------------------  
+![image](https://github.com/vipinyadav2k/HireWheels/assets/122339831/46c1bf03-7e8d-45cd-a52e-b184f5c8eee5)
+
+1. View Personal Profile Data:
+
+   ![image](https://github.com/vipinyadav2k/HireWheels/assets/122339831/d4866737-a336-4ac6-8c51-a661d70b5e5d)
+
+2. View All Available Vehciles to book (getByAvailabiltyStatus):
+
+   ![image](https://github.com/vipinyadav2k/HireWheels/assets/122339831/c5fcf095-3ae3-439f-8088-8504d676c32d)
+
+3. Placing an Order:
+
+   ![image](https://github.com/vipinyadav2k/HireWheels/assets/122339831/b2806bb0-b99c-49f7-b946-2b43b2928af2)
+
+4. Order Placed Successfully:
+
+   ![image](https://github.com/vipinyadav2k/HireWheels/assets/122339831/7f50f432-13a6-48e8-9d32-5149c0d46e57)
+   
+
+-----------------------------------------------------
+            MySQL Database
+-----------------------------------------------------  
+
+1. Whole Database:
+![image](https://github.com/vipinyadav2k/HireWheels/assets/122339831/6bf2f1d2-a8c8-42b0-89fb-ff4f95691e57)
+
+2. Role Based User Database:
+![image](https://github.com/vipinyadav2k/HireWheels/assets/122339831/8e58c6ae-53c0-4b57-96cc-4774e93a3d08)
+
+
+
+
 
