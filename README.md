@@ -66,7 +66,8 @@ This is Spring-Boot Project, which provides role-based authentication for Hiring
 
 4. Order Placed Successfully:
 
-   ![image](https://github.com/vipinyadav2k/HireWheels/assets/122339831/7f50f432-13a6-48e8-9d32-5149c0d46e57)
+  ![image](https://github.com/vipinyadav2k/HireWheels/assets/122339831/c060ab43-271b-42b0-86e8-ba5100608303)
+
    
 
 -----------------------------------------------------
