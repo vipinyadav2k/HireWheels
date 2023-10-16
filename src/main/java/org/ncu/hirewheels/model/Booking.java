@@ -13,25 +13,25 @@ public class Booking {
     @Column(name = "booking_id", nullable = false, updatable = false)
     private Long bookingId;
 
-    @Column(name = "pickup_date")
+    @Column(name = "pickup_date", nullable = false)
     private Date pickupDate;
 
-    @Column(name = "dropoff_date")
+    @Column(name = "dropoff_date", nullable = false)
     private Date dropoffDate;
 
-    @Column(name = "booking_date")
+    @Column(name = "booking_date", nullable = false)
     private Date bookingDate;
 
-    @Column(name = "amount" )
+    @Column(name = "amount" , nullable = false)
     private Integer amount;
     
-    @Column(name="location" )
+    @Column(name="location" , nullable = false)
     private String Location;
     
-    @Column(name="vehicle_id" )
+    @Column(name="vehicle_id" , nullable = false)
     private Long vehicleId;
     
-    @Column(name="user_id" )
+    @Column(name="user_id" , nullable = false)
     private String UserId;
 
 
