@@ -36,9 +36,11 @@ This is Spring-Boot Project, which provides role-based authentication for Hiring
 
 3. Placing an Order:
 
+   [When User Books a Vehicle, Its Availability Status gets updated to 0, thus making it unavailable from the list of vehicles for other users to buy]
+
    ![image](https://github.com/vipinyadav2k/HireWheels/assets/122339831/b2806bb0-b99c-49f7-b946-2b43b2928af2)
 
-4. Order Placed Successfully:
+5. Order Placed Successfully:
 
   ![image](https://github.com/vipinyadav2k/HireWheels/assets/122339831/c060ab43-271b-42b0-86e8-ba5100608303)
 
